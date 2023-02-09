@@ -5,6 +5,7 @@ let createBoard = function(sideLength, board) {
         board.appendChild(row);
         for (let j = 0; j < sideLength; j++) {
             const square = document.createElement("div")
+            square.textContent = "t";
             row.appendChild(square);
         }
 
