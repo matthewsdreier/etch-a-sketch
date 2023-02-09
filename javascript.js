@@ -1,4 +1,9 @@
 let createBoard = function(sideLength, board) {
+
+    while(board.firstChild) {
+        board.removeChild(board.lastChild);
+    }
+
     for (let i = 0; i < sideLength; i++) {
         const row = document.createElement("div");
         row.classList.add("row");
@@ -14,7 +19,20 @@ let createBoard = function(sideLength, board) {
     }
 }
 
-board = document.querySelector(".board");
-sideLength = 4;
+let board = document.querySelector(".board");
+let sideLengthButton = document.querySelector("button");
 
-createBoard(sideLength, board);
+createBoard(4, board);
+
+sideLengthButton.addEventListener("click", e => {
+    let sideLength = prompt("Enter the side length for the grid:");
+    if (isNaN(sideLength)) {
+        alert("Please enter a number.");
+        sideLength = prompt("Enter the side length for the grid:");
+    } else if (sideLength > 100 || sideLength < 0) {
+        alert("Please enter a number between 1 and 100");
+        sideLength = prompt("Enter the side length for the grid:");
+    } else {
+        createBoard(sideLength, board);
+    }
+});

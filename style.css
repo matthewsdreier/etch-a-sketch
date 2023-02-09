@@ -12,7 +12,8 @@ body {
     justify-content: flex-start;
     width: 400px;
     height: 400px;
-    gap: 2px
+    gap: 2px;
+    flex: auto;
 }
 
 .row {
