@@ -5,10 +5,12 @@ let createBoard = function(sideLength, board) {
         board.appendChild(row);
         for (let j = 0; j < sideLength; j++) {
             const square = document.createElement("div")
-            square.textContent = "t";
+            square.classList.add("square");
+            square.addEventListener("mouseenter", e => {
+                square.classList.add("colored");
+            })
             row.appendChild(square);
         }
-
     }
 }
 

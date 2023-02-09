@@ -2,9 +2,23 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 400px;
+    height: 400px;
+    gap: 2px
 }
 
 .row {
     display: flex;
     justify-content: flex-start;
+    flex: auto;
+    gap: 2px;
+}
+
+.square {
+    flex: auto;
+    background-color: lightgray;
+}
+
+.square.colored {
+    background-color: black;
 }
